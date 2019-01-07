@@ -23,7 +23,7 @@ exports.create = (req, res) => {
         res.send(data);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Something wrong while trying to create the product."
+            message: err.message || "Something is wrong in trying create the product."
         });
     });
 };
@@ -35,7 +35,7 @@ exports.findAll = (req, res) => {
         res.send(products);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Something wrong while trying to retrieve products."
+            message: err.message || "Something is wrong  to retrieve products."
         });
     });
 };
