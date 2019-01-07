@@ -5,13 +5,13 @@ exports.create = (req, res) => {
     // Request validation
     if(!req.body) {
         return res.status(400).send({
-            message: "Product content can not be empty"
+            message: "Product content can not be empty as such"
         });
     }
 
     // Create a Product
     const product = new Product({
-        title: req.body.title || "No product title", 
+        title: req.body.title || "No product title is found ", 
         description: req.body.description,
         price: req.body.price,
         company: req.body.company
@@ -23,7 +23,7 @@ exports.create = (req, res) => {
         res.send(data);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Something wrong while creating the product."
+            message: err.message || "Something wrong while trying to create the product."
         });
     });
 };
@@ -35,7 +35,7 @@ exports.findAll = (req, res) => {
         res.send(products);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Something wrong while retrieving products."
+            message: err.message || "Something wrong while trying to retrieve products."
         });
     });
 };
